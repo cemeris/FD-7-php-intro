@@ -1,7 +1,7 @@
 <?php
 
 function addButton($number) {
-    echo '<button>' . $number . '</button>';
+    echo '<button class="success">' . $number % 3 . '</button>';
 }
 
 function addMultipleButtons($start, $end) {

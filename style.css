@@ -1,0 +1,10 @@
+/** @format */
+
+body {
+  background: lightgrey;
+}
+
+.success {
+  background: lightgreen;
+  color: rgb(0, 71, 0);
+}
