@@ -2,7 +2,13 @@
 
 function addButton($number) {
     $output = $number % 3;
-    echo '<button class="success">' . $output . '</button>';
+
+    if ($number % 4 == 0) {
+        echo '<button class="success">' . $output . '</button>';
+    }
+    else {
+        echo '<button>' . $output . '</button>';
+    }
 }
 
 function addMultipleButtons($start, $end) {
