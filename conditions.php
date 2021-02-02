@@ -1,6 +1,6 @@
 <?php
     $greating = "Hello world";
-    $value = 3;
+    $value = 1;
 ?>
 
 <h1><?php

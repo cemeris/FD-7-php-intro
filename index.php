@@ -5,4 +5,6 @@
 
   include "conditions.php";
 
+  include "functions.php";
 
+  addMultipleButtons(1, 42);
