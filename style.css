@@ -4,6 +4,13 @@ body {
   background: lightgrey;
 }
 
+.btn {
+  font-size: 18px;
+  padding: 0.4em 0.625em;
+  border: 0.0625em solid rgb(0, 71, 0);
+  border-radius: 0.3125em;
+  margin: 0.125em;
+}
 .success {
   background: lightgreen;
   color: rgb(0, 71, 0);

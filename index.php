@@ -10,8 +10,18 @@
   include "form.php";
 
   $end = 42;
-  if (isset($_GET['end'])) {
+  if (isset($_GET['end']) && is_int($_GET['end'])) {
     $end = $_GET['end'];
   }
 
-  addMultipleButtons(1, $end);
+  $start = 1;
+  if (isset($_GET['start']) && is_int($_GET['start'])) {
+    $start = $_GET['start'];
+  }
+
+  $order = 4;
+  if (isset($_GET['success']) && is_int($_GET['success'])) {
+    $order = $_GET['success'];
+  }
+
+  addMultipleButtons($start, $end, $order);
