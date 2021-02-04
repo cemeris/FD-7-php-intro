@@ -18,3 +18,11 @@ function addMultipleButtons($start, $end, $order) {
         addMultipleButtons($start + 1, $end, $order);
     }
 }
+
+
+function isValueInt($value) {
+    if ((int) $value > 0 || $value === "0") {
+        return true;
+    }
+    return false;
+}
