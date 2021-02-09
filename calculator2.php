@@ -1,7 +1,14 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $n1 = '';
 $n2 = '';
 $operator = '';
+$allowed_operations = ['+' => '+', '-' => '-', '*' => '*', '/' => '/', '**' => '^'];
 
 if (array_key_exists('number-1', $_GET) &&
     array_key_exists('number-2', $_GET) &&
@@ -12,7 +19,7 @@ if (array_key_exists('number-1', $_GET) &&
     $operator = $_GET['operator'];
     if (isValueInt($n1) &&
         isValueInt($n2) &&
-        array_key_exists($operator, ['+' => null, '-' => null, '*' => null, '/' => null, '**' => null])
+        array_key_exists($operator, $allowed_operations)
     ) {
         switch ($operator) {
             case '+':
@@ -53,17 +60,17 @@ function isValueInt($value) {
 }
 ?>
 
-
 <form action="" style="" method="get">
     <label>number1: </label>
     <input type="number" name="number-1" value="<?=$n1;?>">
     <label>operation: </label>
     <select name="operator" id="">
-        <option value="+">+</option>
-        <option value="-" selected>-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-        <option value="**">^</option>
+        <?php
+        foreach($allowed_operations as $key => $opr) {
+            $selected = $operator === $key ? 'selected' : '';
+            echo "<option value='$key' $selected>$opr</option>";
+        }
+        ?>
     </select>
     <label>number2: </label>
     <input type="number" name="number-2" value="<?=$n2;?>">
