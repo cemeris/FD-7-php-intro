@@ -17,10 +17,30 @@
     array_key_exists('number-2', $_GET) &&
     array_key_exists('operator', $_GET)
  ) {
-    echo 'success';
+     $n1 = $_GET['number-1'];
+     $n2 = $_GET['number-2'];
+     $operator = $_GET['operator'];
+     if (isValueInt($n1) &&
+        isValueInt($n2) &&
+        array_key_exists($operator, ['+' => null, '-' => null])
+     ) {
+        echo 'success';
+     }
+     else {
+         echo "wrong field values";
+     }
  }
  else {
      echo 'please set values';
  }
 
+
+
+
+ function isValueInt($value) {
+    if ((int) $value > 0 || $value === "0") {
+        return true;
+    }
+    return false;
+}
 ?>
