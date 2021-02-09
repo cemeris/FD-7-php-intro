@@ -7,13 +7,16 @@
 ?>
 
 <form action="" method="get">
+    <label>number1: </label>
     <input type="number" name="number-1">
-    <input type="number" name="number-2">
+    <label>operation: </label>
     <select name="operator" id="">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
     </select>
+    <label>number2: </label>
+    <input type="number" name="number-2">
     <button type="submit">submit</button>
 </form>
 
@@ -23,7 +26,9 @@
         isset($_GET['number-2']) &&
         isValueInt($_GET['number-2'])
     ) {
+        if (isset($_GET['operator']) && $_GET['operator'] = "+") {
             echo $_GET['number-1'] + $_GET['number-2'];
+        }
     }
 ?>
 
